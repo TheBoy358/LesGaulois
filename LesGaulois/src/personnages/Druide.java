@@ -29,14 +29,14 @@ public class Druide {
 	
 	public void preparerPotion() {
 		Random potion = new Random();
-			effetPotionMax = potion.nextInt(6)+5;
+		forcePotion = potion.nextInt(6)+5;
 		
-		if (effetPotionMax > 7) {
-			parler("J'ai préparé une super potion de force " + effetPotionMax + ".");
+		if (forcePotion > 7) {
+			parler("J'ai préparé une super potion de force " + forcePotion + ".");
 		}
 		
 		else {
-			parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force " + effetPotionMax + ".");
+			parler("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force " + forcePotion + ".");
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class Druide {
 		}
 		
 		else {
-			gaulois.boirePotion(effetPotionMax);
+			gaulois.boirePotion(forcePotion);
 		}
 	}
 	
@@ -56,5 +56,8 @@ public class Druide {
 		panoramix.preparerPotion();
 		Gaulois asterix = new Gaulois("Astérix",8);
 		panoramix.booster(asterix);
+		Gaulois obelix = new Gaulois("Obélix",25);
+		panoramix.booster(obelix);
+		obelix.parler("Par Bélénos, ce n'est pas juste !"); 
 	}
 }
