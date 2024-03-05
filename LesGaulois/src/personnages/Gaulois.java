@@ -10,7 +10,7 @@ public class Gaulois {
 		this.force = force;
 	}
 
-	public Gaulois getNom() {
+	public String getNom() {
 		return nom;
 	}
 
