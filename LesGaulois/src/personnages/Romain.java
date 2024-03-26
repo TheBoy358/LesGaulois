@@ -31,9 +31,9 @@ public class Romain {
 	
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
-		assert force > 0; // précondition
+		assert force > 0; // Precondition
 		int oldForce = force;
-		forceCoup = CalculResistanceEquipement(forceCoup);
+		forceCoup = calculResistanceEquipement(forceCoup);
 		force -= forceCoup;
 		
 		if (force > 0) {
@@ -43,13 +43,12 @@ public class Romain {
 			parler("J'abandonne...");
 		}
 		
-		switch (force) {
-		case 0:
+		if (force == 0) {
 			parler("Aïe");
-		default:
-			equipementEjecte = ejecterEquipement();
-			parler("J'abandonne...");
-			break;
+			
+			} else {
+				equipementEjecte = ejecterEquipement();
+				parler("J'abandonne...");
 			}
 		
 		assert force < oldForce; // post condition la force a diminuée
@@ -88,11 +87,11 @@ public class Romain {
 	}
 	
 	
-	private int CalculResistanceEquipement(int forceCoup) {
+	private int calculResistanceEquipement(int forceCoup) {
 		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		
-		if (!(nbEquipement == 0)) {
+		if (nbEquipement != 0) {
 		    texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
 		    
 		    for (int i = 0; i < nbEquipement;) {
@@ -105,7 +104,7 @@ public class Romain {
 		      }
 		        i++;
 		  }
-		    texte =+ resistanceEquipement + "!";
+		    texte += resistanceEquipement + "!";
 	  }
 
 	parler(texte);
