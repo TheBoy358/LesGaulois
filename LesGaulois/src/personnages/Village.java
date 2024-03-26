@@ -29,7 +29,7 @@ public class Village {
    }
     
    public void afficherVillageois() {
-	   System.out.println("Dans le village du chef Abraracourcix vivent les lÃ©gendaires gaulois :");
+	   System.out.println("Dans le village du chef Abraracourcix vivent les légendaires gaulois :");
 	   for (int i=0; i<nbVillageois; i++) {
 		   System.out.println("-" + villageois[i].getNom());
 	   }
@@ -37,18 +37,18 @@ public class Village {
 
     public static void main(String[] args) {
 	    Village village;
-	    village = new Village("Village des IrrÃ©ductibles", 30);
+	    village = new Village("Village des Irréductibles", 30);
 	   
 	    Chef abraracourcix;
 	    abraracourcix = new Chef("Abraracourcix", 6, village);
 	   
 	    Gaulois asterix;
-	    asterix = new Gaulois("AstÃ©rix",8);
+	    asterix = new Gaulois("Astérix",8);
 	    village.ajouterHabitant(asterix);
 	    //village.trouverHabitant(0);
 	    
 	    Gaulois obelix;
-	    obelix = new Gaulois("ObÃ©lix",25);
+	    obelix = new Gaulois("Obélix",25);
 	    village.ajouterHabitant(obelix);
 	    
 	    village.afficherVillageois();
